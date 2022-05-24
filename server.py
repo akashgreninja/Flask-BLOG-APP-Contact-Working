@@ -6,9 +6,9 @@ import requests
 import smtplib
 from email.message import EmailMessage
 
-my_email ="akashudayhulekal@gmail.com"
-password ="pokemonpikachu"
-other_email ="akashuhulekal@gmail.com"
+my_email ="Your_email"
+password ="Your_password"
+other_email ="other_email"
 
 app=Flask(__name__)
 
@@ -56,8 +56,8 @@ def receive_data():
             msg.set_content(f"Name:{name_1} email:{email_1} message:{message_1} phone:{phone_1}")
 
             msg['Subject'] ='from your website'
-            msg['From'] ="akashudayhulekal@gmail.com"
-            msg['To'] ="akashuhulekal@gmail.com"
+            msg['From'] =my_email
+            msg['To'] =other_email
 
                 # Send the message via our own SMTP server.
             with smtplib.SMTP('smtp.gmail.com', port=587) as server:
